@@ -1,19 +1,29 @@
-# modal-project
+# Vue 3 & Firebase
 
-## Project setup
+### VSC Extensions
+
+1. material icon theme
+1. vetur
+1. live server
+
+#### To compile the Vue `<style>` tag w/ Sass/SCSS:
+
+1. Say yes to using `CSS Preprocessors` when creating a Vue Project, select Dart-Sass to use things like `@use` and `@include`
+1. Install Sass:
+   `npm i sass --save-dev`
+1. Create or add code to `vue.config.js`
+1. Add this code to it:
+
 ```
-npm install
+module.exports = {
+	css: {
+		loaderOptions: {
+			sass: {
+				implementation: require("sass"),
+			},
+		},
+	},
+};
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Add `lang="sass"` to `<style>` in components

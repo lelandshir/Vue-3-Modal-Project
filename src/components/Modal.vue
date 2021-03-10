@@ -1,8 +1,11 @@
 <template>
 	<div class="backdrop" @click.self="closeModal">
 		<div class="modal" :class="{ dark: theme === 'dark' }">
-			<h1>{{ header }}</h1>
-			<b>{{ text }}</b>
+			<slot></slot>
+			<div class="actions">
+				<slot name="links"></slot>
+				<slot name="moreInfo"></slot>
+			</div>
 		</div>
 	</div>
 </template>
@@ -19,7 +22,7 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import "../styles/global.sass"
 .backdrop
     background: rgba(0,0,0,0.5)
@@ -52,4 +55,19 @@ export default {
 
 .modal.dark h1
     color: #fff
+
+.modal .actions
+    text-align: center
+    margin: 30px 0 10px 0
+
+.modal .actions a
+    text-align: center
+    // color: #fff
+    background: #fff
+    margin: 5%
+    border: 1px solid #000
+    border-radius: .3rem
+    text-decoration: none
+    padding: 2%
+    font-weight: 500
 </style>

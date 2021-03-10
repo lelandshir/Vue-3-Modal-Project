@@ -72,3 +72,10 @@ module.exports = {
 
 - Really good for passing custom templates into reusable components
 - Very different from props
+- named slots using template tag
+- Perfect for passing links into a modal
+- Default content [demo]
+
+### Teleport (new feature)
+
+- Teleport some content to a different place in the dom, even in outside the scope of the Vue app itself

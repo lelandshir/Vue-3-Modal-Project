@@ -46,3 +46,29 @@ module.exports = {
 - Exported Component Object can hold methods, data, etc
   1. If we want data, use the data function which returns an object
   1. Outputting Data: double curlys in the template similar to Angular 1
+
+### Template Refs
+
+- Template refs are for handling DOM elements, like the query selector
+
+### Passing Props
+
+- Make components more reusable
+- Data Bind to set props as different data types using a `:`
+- Output dynamic classes with data binding
+
+### Custom Events
+
+- An event can be fired from a component and listened to by the parent component
+- Emit the event
+
+### Event Modifiers
+
+- React to a right click instead of a left OR only react to a click event if a user clicks on a specific element
+- React only in certain condition, stop event bubbling
+- Ex: `@click.shift` only react wen the user clicks while holding down the shift key or `@click.self`
+
+### Slots
+
+- Really good for passing custom templates into reusable components
+- Very different from props

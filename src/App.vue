@@ -31,6 +31,7 @@
 				<p>Email: {{ email }}</p>
 				<p>Manager: {{ manager }}</p>
 				<p>Password: ******</p>
+				<button>change</button>
 			</template>
 		</Modal>
 	</teleport>

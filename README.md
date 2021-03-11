@@ -8,24 +8,29 @@
 
 ### CSS
 
-#### To compile the Vue `<style>` tag w/ Sass/SCSS:
+#### To compile the Vue `<style>` tag w/ Sass/SCSS and Solving the `TypeError: this.getOptions is not a function in vue.js`
 
 - Say yes to using `CSS Preprocessors` when creating a Vue Project, select Dart-Sass to use things like `@use` and `@include`
-- Install Sass:
-  `npm i sass --save-dev`
-- Create or add code to `vue.config.js`
-- Add this code to it:
+  Fixing the TypeError with Sass
+
+npm i -D sass sass-loader
+in package.json: `devDependencies: “sass-loader”: “7.3.1”,`
+remove node_modules
+npm i
+My `package.json` file:
 
 ```
-module.exports = {
-	css: {
-		loaderOptions: {
-			sass: {
-				implementation: require("sass"),
-			},
-		},
-	},
-};
+ "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.32.6",
+    "sass-loader": "7.3.1",
+    "vue-template-compiler": "^2.6.11"
+  },
 ```
 
 - Note: Initially App's styles are globally scoped (they get placed in the head), restrict to just that component by adding the `scoped` prop to `<style>`
